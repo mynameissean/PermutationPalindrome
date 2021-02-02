@@ -2,7 +2,7 @@
 
 namespace PermutationPalindrome
 {
-    class Program
+    class PermutationPalindrome
     {
         static void Main(string[] args)
         {
