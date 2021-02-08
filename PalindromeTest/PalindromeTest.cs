@@ -12,6 +12,9 @@ namespace PalindromeTest
         {
             SimpleTests(new DictionarySearch());
             SimpleTests(new SortAndTraverse());
+            SimpleTests(new LINQPermuter());
+            SimpleTests(new AndrewTest());
+            SimpleTests(new StephenPermuter());
         }
         
         private void SimpleTests(Permuter permuter)
@@ -29,6 +32,9 @@ namespace PalindromeTest
         {
             GivenTests(new DictionarySearch());
             GivenTests(new SortAndTraverse());
+            GivenTests(new LINQPermuter());
+            GivenTests(new AndrewTest());
+            GivenTests(new StephenPermuter());
         }
 
         private void GivenTests(Permuter permuter)
@@ -44,11 +50,15 @@ namespace PalindromeTest
         {
             EdgeCaseTestSetup(new DictionarySearch());
             EdgeCaseTestSetup(new SortAndTraverse());
+            EdgeCaseTestSetup(new LINQPermuter());
+            EdgeCaseTestSetup(new AndrewTest());
+            EdgeCaseTestSetup(new StephenPermuter());
         }
 
         private void EdgeCaseTestSetup(Permuter permuter)
         {
             Assert.IsTrue(permuter.HasPalindrome(""));
+            Assert.IsTrue(permuter.HasPalindrome(" "));
             Assert.IsTrue(permuter.HasPalindrome(null));
             Assert.IsTrue(permuter.HasPalindrome("a"));
             Assert.IsTrue(permuter.HasPalindrome("aa"));
@@ -60,14 +70,26 @@ namespace PalindromeTest
             //Test the dictionary           
             TimingTestExecution(new DictionarySearch(), "abcdefghijklmnopqrstuvwxyz", 1000000);
             TimingTestExecution(new DictionarySearch(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
+            TimingTestExecution(new DictionarySearch(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
 
 
             //Test the search and sort
             TimingTestExecution(new SortAndTraverse(), "abcdefghijklmnopqrstuvwxyz", 1000000);
             TimingTestExecution(new SortAndTraverse(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
+            TimingTestExecution(new SortAndTraverse(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
+
+            TimingTestExecution(new LINQPermuter(), "abcdefghijklmnopqrstuvwxyz", 1000000);
+            TimingTestExecution(new LINQPermuter(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
+            TimingTestExecution(new LINQPermuter(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
 
 
+            TimingTestExecution(new AndrewTest(), "abcdefghijklmnopqrstuvwxyz", 1000000);
+            TimingTestExecution(new AndrewTest(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
+            TimingTestExecution(new AndrewTest(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
 
+            TimingTestExecution(new StephenPermuter(), "abcdefghijklmnopqrstuvwxyz", 1000000);
+            TimingTestExecution(new StephenPermuter(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
+            TimingTestExecution(new StephenPermuter(), "aaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaabc", 1000000);
         }
 
         private void TimingTestExecution(Permuter permuter,
