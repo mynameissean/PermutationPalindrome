@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PermutationPalindrome", "PermutationPalindrome\PermutationPalindrome.csproj", "{686F3A39-3010-4ABA-8DD0-837C43E1F729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromeTest", "PalindromeTest\PalindromeTest.csproj", "{C295B9C0-2667-4648-8414-4369997B29EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PalindromeTest", "PalindromeTest\PalindromeTest.csproj", "{C295B9C0-2667-4648-8414-4369997B29EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalindromeBenchmark", "PalindromeBenchmark\PalindromeBenchmark.csproj", "{5D1B6036-8935-4CD0-8DE6-C2A2D759E5CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C295B9C0-2667-4648-8414-4369997B29EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C295B9C0-2667-4648-8414-4369997B29EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C295B9C0-2667-4648-8414-4369997B29EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D1B6036-8935-4CD0-8DE6-C2A2D759E5CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D1B6036-8935-4CD0-8DE6-C2A2D759E5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D1B6036-8935-4CD0-8DE6-C2A2D759E5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D1B6036-8935-4CD0-8DE6-C2A2D759E5CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
